@@ -271,6 +271,8 @@ int logicalNeg(int x)
 
   int sign_same = ~(~(sign_x ^ sign_negate_x) + 1);
   return sign_same & 0x01 & ~sign_negate_x;
+  // 经典的优化实现
+  // return ((x | (~x + 1)) >> 31) + 1;
 }
 /* howManyBits - return the minimum number of bits required to represent x in
  *             two's complement
