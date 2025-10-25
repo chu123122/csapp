@@ -324,6 +324,7 @@ int howManyBits(int x)
   bit_count = bit_count + (1 & mask);
   search_value = (search_value & ~mask) | (has_bits & mask);
 
+  bit_count = bit_count + (search_value & 0x01);
   return bit_count + 1;
 }
 // float
@@ -340,6 +341,7 @@ int howManyBits(int x)
  */
 unsigned floatScale2(unsigned uf)
 {
+
   return 2;
 }
 /*
